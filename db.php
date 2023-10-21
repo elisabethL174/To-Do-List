@@ -1,12 +1,12 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "task_tracker";
+// Database connection
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'uts_lab';
 
-$conn = mysqli_connect($host, $username, $password, $database);
+$conn = mysqli_connect($host, $user, $password, $database);
 
 if (!$conn) {
-    die("Koneksi database gagal: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
-?>

@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Task Manager</title>
-</head>
-<body>
-    <!-- navbar.php -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- navbar.php -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="home_page.php">Task Manager</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,7 +19,7 @@
             </div>
         </nav>
     <div class="container mt-5">
-        <h2>Task Manager</h2>
+        <h2>About Us</h2>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
