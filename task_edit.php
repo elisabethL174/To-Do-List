@@ -38,6 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
+<style>
+    .navbar-brand {
+        font-weight: bold;
+        color: white;
+    }
+
+</style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <!-- navbar.php -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="home_page.php">Task Manager</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -68,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </nav>
     <!-- form Task Edit -->
     <div class="container mt-5">
-        <h2>Edit Task</h2>
+        <h2 class="text-center">Edit Task</h2>
         <form method="post">
             <div class="form-group">
                 <label for="title">Title:</label>
@@ -82,8 +89,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="due_date">Due Date:</label>
                 <input type="date" class="form-control" id="due_date" name="due_date" value="<?= $task['due_date'] ?>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Update Task</button>
-            <a href="home_page.php" class="btn btn-secondary">Cancel</a>
+            <div class="d-flex justify-content-between mt-3">
+                <button type="submit" class="btn btn-primary">Update Task</button>
+                <a href="home_page.php" class="btn btn-secondary">Cancel</a>
+            </div>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

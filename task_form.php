@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<style>
+    .navbar-brand {
+        font-weight: bold;
+        color: white;
+    }
+
+</style>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +17,7 @@
 </head>
 <body>
     <!-- navbar.php -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="home_page.php">Task Manager</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,8 +38,8 @@
     </nav>
 
     <!-- Form for adding a new task -->
-    <div class="container">
-        <h2>Add Task</h2>
+    <div class="container mt-5">
+        <h2 class="text-center">Add Task</h2>
     <form method="post" action="task_add.php">
     <div class="form-group">
         <label for="title">Title:</label>
@@ -44,7 +53,9 @@
         <label for="due_date">Due Date:</label>
         <input type="date" class="form-control" id="due_date" name="due_date" required>
     </div>
-    <button type="submit" class="btn btn-primary">Add Task</button>
+    <div class="row justify-content-center">
+        <button type="submit" class="btn btn-primary">Add Task</button>
+    </div>
 </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

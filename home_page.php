@@ -19,6 +19,18 @@ $result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
+<style>
+    .navbar-brand {
+        font-weight: bold;
+        color: white;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+</style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,7 +41,7 @@ $result = mysqli_query($conn, $sql);
 <body>
 
     <!-- navbar.php -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="home_page.php">Task Manager</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,7 +64,7 @@ $result = mysqli_query($conn, $sql);
     <div class="container mt-4">
         <h3>Task List</h3>
 
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Title</th>
@@ -81,10 +93,12 @@ $result = mysqli_query($conn, $sql);
                     }
                     echo '</select>';
                     echo '</div>';
-                    echo '<button type="submit" class="btn btn-primary btn-sm">Update Status</button>';
+                    echo '<div class="button-container">';
+                    echo '<button type="submit" class="btn btn-primary btn-sm flex-fill mx-1">Update Status</button>';
                     echo '</form>';
-                    echo '<a href="task_edit.php?id=' . $row['id'] . '" class="btn btn-warning btn-sm">Edit</a>';
-                    echo '<a href="task_delete.php?id=' . $row['id'] . '" class="btn btn-danger btn-sm">Delete</a>';
+                    echo '<a href="task_edit.php?id=' . $row['id'] . '" class="btn btn-warning btn-sm flex-fill mx-1">Edit</a>';
+                    echo '<a href="task_delete.php?id=' . $row['id'] . '" class="btn btn-danger btn-sm flex-fill mx-1">Delete</a>';
+                    echo '</div>';
                     echo '</td>';
                     echo '</tr>';
                 }
