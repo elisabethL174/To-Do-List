@@ -44,6 +44,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         color: white;
     }
 
+    body {
+        background-color: black !important; /* Set the background color to black */
+    }
+
+    .text-center {
+        color: white;
+    }
+
+    .form-text {
+        color: white;
+    }
+
 </style>
 <html lang="en">
 <head>

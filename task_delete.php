@@ -42,9 +42,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Delete Task</title>
 </head>
 <body>
+<style>
+    .navbar-brand {
+        font-weight: bold;
+        color: white;
+    }
+
+    body {
+        background-color: black !important; /* Set the background color to black */
+    }
+
+    .text {
+        color: white;
+    }
+
+</style>
     <div class="container mt-5">
-        <h2>Delete Task</h2>
-        <p>Are you sure you want to delete the task: <?= $task['title'] ?>?</p>
+        <h2 class="text">Delete Task</h2>
+        <p class="text">Are you sure you want to delete the task: <?= $task['title'] ?>?</p>
         <form method="post">
             <button type="submit" class="btn btn-danger">Yes, Delete</button>
             <a href="home_page.php" class="btn btn-secondary">Cancel</a>

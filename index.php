@@ -32,6 +32,11 @@ body, html {
     width: 100%;
     z-index: 2;
   }
+
+  .navbar-brand {
+        font-weight: bold;
+        color: white;
+    }
   
   .white-thingy {
   display: flex;
@@ -41,6 +46,7 @@ body, html {
   flex-direction: column;
   flex-grow: 1; /* Allow the white-thingy to grow to fill empty space */
   z-index: 2;
+  background-color: #333345;
 }
 
 .grey-thingy {
@@ -54,6 +60,7 @@ body, html {
   margin-bottom: 1vw;
   border-radius: 15px;
   flex-direction: column;
+  background-color: #9191A5;
   z-index: 2;
 }
 
@@ -83,6 +90,8 @@ body, html {
   margin-top: 10px;
   margin-bottom: 0;
   z-index: 2;
+  color: white;
+  text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5); /* Text shadow */
 }
 
 .white-box {
@@ -99,6 +108,8 @@ body, html {
   flex: 1;
   margin-bottom: 0;
   z-index: 2;
+  background-color: #333345;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5); /* Box shadow */
 }
 
 .wbimg {
@@ -159,6 +170,8 @@ body, html {
     text-align: center;
     z-index: 2;
     transition: 0.3s;
+    text-shadow: 0px 0px 50px rgba(196, 196, 255, 0.5); /* Text shadow */
+    box-shadow: 0px 0px 50px rgba(196, 196, 255, 0.5); /* Box shadow */
 }
 
 .menu-text:hover {
@@ -181,7 +194,7 @@ body, html {
 <body>
     <!-- navbar.php -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="home_page.php">Task Manager</a>
+        <a class="navbar-brand" href="home_page.php">To Do List</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -211,19 +224,19 @@ body, html {
 
                 <div class="white-box-container-again">
                     <div class="white-box">
-                        <img src="https://cdn2.iconfinder.com/data/icons/devine-icons-part-2/128/Easy_of_Acess.png" class="wbimg">
+                        <img src="img/eoa.png" class="wbimg">
                     </div>
                     <p class="guh">Ease of<br>Use<p>
                 </div>
                 <div class="white-box-container-again">
                     <div class="white-box">
-                        <img src="https://cdn1.iconfinder.com/data/icons/gradak-business-solidarity/32/business-08-256.png" class="wbimg">
+                        <img src="img/idk.png" class="wbimg">
                     </div>
                     <p class="guh">Simple<br>Features<p>
                 </div>
                 <div class="white-box-container-again">
                     <div class="white-box">
-                        <img src="https://cdn3.iconfinder.com/data/icons/font-awesome-solid/512/eye-dropper-256.png" class="wbimg">
+                        <img src="img/eyedropper.png" class="wbimg">
                     </div>
                 <p class="guh">Clear<br>Visuals<p>
             </div>

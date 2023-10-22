@@ -39,7 +39,25 @@ mysqli_close($conn);
     .container {
         justify-content: center;
     }
-    </style>
+
+    body {
+        background-color: black !important; /* Set the background color to black */
+    }
+
+    .text-center {
+        color: white;
+    }
+
+    .form-text {
+        color: white;
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        color: white;
+    }
+
+</style>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,7 +67,7 @@ mysqli_close($conn);
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="home_page.php">Task Manager</a>
+        <a class="navbar-brand" href="home_page.php">To Do List</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

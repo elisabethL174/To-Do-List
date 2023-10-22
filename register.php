@@ -11,9 +11,30 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Register</title>
 </head>
+
+<style>
+body {
+        background-color: black !important; /* Set the background color to black */
+    }
+
+    .text-center {
+        color: white;
+    }
+
+    .form-text {
+        color: white;
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        color: white;
+    }
+    
+</style>
+
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="home_page.php">Task Manager</a>
+        <a class="navbar-brand" href="index.php">To Do List</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

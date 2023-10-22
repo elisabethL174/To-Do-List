@@ -6,6 +6,18 @@
         color: white;
     }
 
+    body {
+        background-color: black !important; /* Set the background color to black */
+    }
+
+    .text-center {
+        color: white;
+    }
+
+    .form-text {
+        color: white;
+    }
+
 </style>
 
 <html lang="en">
@@ -18,7 +30,7 @@
 <body>
     <!-- navbar.php -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="home_page.php">Task Manager</a>
+        <a class="navbar-brand" href="home_page.php">To Do List</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,15 +54,15 @@
         <h2 class="text-center">Add Task</h2>
     <form method="post" action="task_add.php">
     <div class="form-group">
-        <label for="title">Title:</label>
+        <label for="title" class="form-text">Title:</label>
         <input type="text" class="form-control" id="title" name="title" required>
     </div>
     <div class="form-group">
-        <label for="description">Description:</label>
+        <label for="description" class="form-text">Description:</label>
         <textarea class="form-control" id="description" name="description"></textarea>
     </div>
     <div class="form-group">
-        <label for="due_date">Due Date:</label>
+        <label for="due_date" class="form-text">Due Date:</label>
         <input type="date" class="form-control" id="due_date" name="due_date" required>
     </div>
     <div class="row justify-content-center">

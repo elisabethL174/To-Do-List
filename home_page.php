@@ -30,6 +30,159 @@ $result = mysqli_query($conn, $sql);
         justify-content: space-around;
     }
 
+    body{
+        background-image: url("img/home_page.png");
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: darken;
+        background-size: cover; /* Scale the background image to cover the entire container */
+        background-repeat: no-repeat; /* Prevent image repetition */
+        background-attachment: fixed; /* Fixed background image */
+    }
+
+    .text {
+        color: white;
+    }
+
+    .container.header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .add-task-button {
+        display: flex;
+        font-size: 1vw;
+        position: relative; /* Set the parent container to a relative position */
+        text-decoration: none;
+        margin-bottom: 0;
+    }
+
+    .add-task {
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        color: white;
+        font-size: 1vw;
+        border-radius: 0.5vw 0 0 0.5vw;
+        background: linear-gradient(to left, #0052AA, #6095FF); /* Gradient background for the overlay */
+        text-align: center;
+        z-index: 2;
+        position: relative; /* Add relative positioning for z-index */
+        text-decoration: none; /* Remove underline on the main element */
+        margin-bottom: 0;
+    }
+
+    .add-task::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #0052AA, #6095FF); /* Gradient background for the overlay */
+        opacity: 0;
+        border-radius: 0.5vw 0 0 0.5vw;
+        z-index: -1;
+        transition: opacity 0.3s; /* Transition opacity for fade effect */
+    }
+
+    .add-task-button:hover .add-task::before {
+        opacity: 1; /* Make the overlay visible on hover */
+        transition: opacity 0.3s; /* Apply transition to opacity for the fade effect */
+    }
+
+    .add-task-plus {
+        margin-left: 0.2vw;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        padding-left: 1.5vw;
+        padding-right: 1.5vw;
+        color: white;
+        font-size: 1vw;
+        border-radius: 0 0.5vw 0.5vw 0;
+        background-color: #0052AA;
+        text-align: center;
+        z-index: 2;
+        font-weight: bold;
+        transition: 0.3s; /* Apply the transition to the background property */
+        text-decoration: none; /* Remove underline on the main element */
+        margin-bottom: 0;
+    }
+
+    .add-task-button:hover .add-task-plus {
+        background-color: #6095FF;
+        transition: 0.3s; /* Apply the transition to the background property */
+    }
+
+    .add-task-button:hover {
+        text-decoration: none;
+    }
+
+    .odd-row {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .even-row {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .table-header {
+        background: linear-gradient(to right, #0052AA, #6095FF); /* White background for the table header row */
+    }
+
+    .text-header {
+        color: white;
+    }
+
+    .table-header th {
+        border-top: 0px !important;
+        border-bottom: 0px !important;
+    }
+
+    .table-header th:first-child {
+        border-radius: 5px 0 0 0;
+    }
+
+    .table-header th:last-child {
+        border-radius: 0 10px 0 0;
+    }
+
+    .text-top {
+        color: white;
+        text-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7); /* Text shadow */
+    }
+
+    .btn.btn-warning {
+        transition: 0.3s;
+    }
+
+    .btn.btn-warning:hover {
+        background-color: #9E8300;
+        border-color: #9E8300;
+        transition: 0.3s;
+    }
+
+    .btn.btn-primary {
+        transition: 0.3s;
+    }
+
+    .btn.btn-primary:hover {
+        background-color: #00029B;
+        border-color: #00029B;
+        transition: 0.3s;
+    }
+
+    .btn.btn-danger {
+        transition: 0.3s;
+    }
+
+    .btn.btn-danger:hover {
+        background-color: #990007;
+        border-color: #990007;
+        transition: 0.3s;
+    }
+
 </style>
 <html lang="en">
 <head>
@@ -42,7 +195,7 @@ $result = mysqli_query($conn, $sql);
 
     <!-- navbar.php -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="home_page.php">Task Manager</a>
+        <a class="navbar-brand" href="home_page.php">To Do List</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,27 +214,38 @@ $result = mysqli_query($conn, $sql);
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <h3>Task List</h3>
+    <div class="container header mt-4">
+        <h3 class="text-top">Task List</h3>
+        <a class="add-task-button" href="task_form.php">
+            <p class="add-task">Add New Task</p>
+            <p class="add-task-plus">+</p>
+        </a>
+    </div>
 
+        <div class="container mt-2">
         <table class="table">
-            <thead>
+            <thead class="table-header">
                 <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th class="text-header">Title</th>
+                    <th class="text-header">Description</th>
+                    <th class="text-header">Due Date</th>
+                    <th class="text-header">Status</th>
+                    <th class="text-header">Action</th>
                 </tr>
             </thead>
             <tbody>
-                <?php
+            <?php
+                // Define a variable to toggle background colors
+                $evenRow = true;
+
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<tr>';
-                    echo '<td>' . $row['title'] . '</td>';
-                    echo '<td>' . $row['description'] . '</td>';
-                    echo '<td>' . $row['due_date'] . '</td>';
-                    echo '<td>' . $row['status'] . '</td>';
+                    // Use the $evenRow variable to toggle between background colors
+                    $rowClass = $evenRow ? 'even-row' : 'odd-row';
+                    echo '<tr class="' . $rowClass . '">';
+                    echo '<td class="text">' . $row['title'] . '</td>';
+                    echo '<td class="text">' . $row['description'] . '</td>';
+                    echo '<td class="text">' . $row['due_date'] . '</td>';
+                    echo '<td class="text">' . $row['status'] . '</td>';
                     echo '<td>';
                     echo '<form action="change_status.php" method="post" style="display:inline;">';
                     echo '<input type="hidden" name="task_id" value="' . $row['id'] . '">';
@@ -96,11 +260,14 @@ $result = mysqli_query($conn, $sql);
                     echo '<div class="button-container">';
                     echo '<button type="submit" class="btn btn-primary btn-sm flex-fill mx-1">Update Status</button>';
                     echo '</form>';
-                    echo '<a href="task_edit.php?id=' . $row['id'] . '" class="btn btn-warning btn-sm flex-fill mx-1">Edit</a>';
-                    echo '<a href="task_delete.php?id=' . $row['id'] . '" class="btn btn-danger btn-sm flex-fill mx-1">Delete</a>';
+                    echo '<a href="task_edit.php?id=' . $row['id'] . '" class="btn btn-warning btn-sm flex-fill mx-1"><img src="img/edit.png" style="width: 20px; height: 20px;" /></a>';
+                    echo '<a href="task_delete.php?id=' . $row['id'] . '" class="btn btn-danger btn-sm flex-fill mx-1"><img src="img/delete.png" style="width: 20px; height: 20px;" /></a>';
                     echo '</div>';
                     echo '</td>';
                     echo '</tr>';
+
+                    // Toggle the $evenRow variable for the next row
+                    $evenRow = !$evenRow;
                 }
                 ?>
             </tbody>
