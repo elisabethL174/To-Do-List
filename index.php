@@ -201,9 +201,6 @@ body, html {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="about_us.php">About Us</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="Register.php">Register</a>
                 </li>
                 <li class="nav-item">

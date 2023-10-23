@@ -21,8 +21,15 @@ $result = mysqli_query($conn, $sql);
 <!DOCTYPE html>
 <style>
     .navbar-brand {
+        text-shadow: rgba(255, 255, 255, 0);
         font-weight: bold;
         color: white;
+        transition: 0.3s;
+    }
+
+    .navbar-brand:hover {
+        text-shadow: rgba(255, 255, 255, 1);
+        transition: 0.3s;
     }
 
     .button-container {
@@ -128,7 +135,7 @@ $result = mysqli_query($conn, $sql);
     }
 
     .table-header {
-        background: linear-gradient(to right, #0052AA, #6095FF); /* White background for the table header row */
+        background: linear-gradient(to right, #0052AA, #6095FF);
     }
 
     .text-header {
@@ -201,9 +208,7 @@ $result = mysqli_query($conn, $sql);
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="about_us.php">About Us</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="task_form.php">Tambah Tugas</a>
                 </li>

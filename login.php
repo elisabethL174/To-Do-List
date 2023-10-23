@@ -31,17 +31,29 @@ mysqli_close($conn);
 
 <!DOCTYPE html>
 <style>
-    .btn-primary {
-        align-self: center;
-        justify-content: center;
-    }
-
-    .container {
-        justify-content: center;
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     body {
-        background-color: black !important; /* Set the background color to black */
+        background-image: url("img/login.png");
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: darken;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        height: calc(100vh - 56px); /* Assuming the navbar's height is 56px, adjust as needed */
     }
 
     .text-center {
@@ -57,6 +69,16 @@ mysqli_close($conn);
         color: white;
     }
 
+    .btn.btn-primary {
+        transition: 0.3s;
+    }
+
+    .btn.btn-primary:hover {
+        background-color: #00029B;
+        border-color: #00029B;
+        transition: 0.3s;
+    }
+
 </style>
 <html lang="en">
 <head>
@@ -67,15 +89,13 @@ mysqli_close($conn);
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="home_page.php">To Do List</a>
+        <a class="navbar-brand" href="index.php">To Do List</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="about_us.php">About Us</a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="Register.php">Register</a>
                     </li>
@@ -85,7 +105,7 @@ mysqli_close($conn);
                 </ul>
             </div>
         </nav>
-    <div class="container mt-5" style="width: 35%;">
+    <div class="container" style="width: 35%;">
         <div class="row justify-content-center">
             <h2 class="text-center">Login</h2>
         </div>
@@ -93,11 +113,11 @@ mysqli_close($conn);
             <form method="post" action="login_process.php">
                 <div class="form-group">
                     <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                    <input type="text" class="form-control col-12" id="username" name="username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                    <input type="password" class="form-control col-12" id="password" name="password" placeholder="Password" required>
                 </div>
                 <div id="loginHelp" class="form-text">Tidak punya akun? Mohon <a href="register.php">register</a> terlebih dahulu.</div>
             <br>
