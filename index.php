@@ -182,6 +182,45 @@ body, html {
     transition: 0.3s;
 }
 
+  /* Your existing styles */
+
+  @media only screen and (max-width: 767px) {
+    /* Styles for screens smaller than 768 pixels wide */
+
+    body {
+      background-size: contain; /* Adjust background-size for smaller screens */
+    }
+
+    .text-center {
+      padding-top: 5vw; /* Adjust padding for smaller screens */
+      padding-bottom: 5vw;
+      font-size: 4vw; /* Adjust font size for smaller screens */
+    }
+
+    .white-box-container {
+      flex-direction: column; /* Stack white boxes vertically on smaller screens */
+    }
+
+    .white-box {
+      width: 100%; /* Make white boxes full width on smaller screens */
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .wbimg {
+      height: 20vw; /* Adjust image size for smaller screens */
+      width: 20vw;
+    }
+
+    .guh {
+      font-size: 3vw; /* Adjust font size for smaller screens */
+    }
+
+    .menu-text {
+      font-size: 4vw; /* Adjust font size for smaller screens */
+    }
+  }
+
     </style>
 
 <html lang="en">
